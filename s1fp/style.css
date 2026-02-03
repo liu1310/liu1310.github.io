@@ -1,0 +1,12 @@
+body {
+    background-color: red;
+    color: white;
+}
+
+#page1 {
+    background-color: rgb(255, 196, 196);
+}
+
+.smallimg {
+    width: 300;
+}
