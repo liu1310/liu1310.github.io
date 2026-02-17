@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(50, 40, 35);
+     font-family: "Inconsolata", monospace;
+     font-weight: 100;
+}
+
+.centered {
+  text-align: center;
+  margin-bottom: calc(50vw - 350px);
+  font-family: "Inconsolata", monospace;
+  font-weight: 100;
+  color: #002a6a;
+}
+
+#page1 {
+    background-color: rgb(255, 255, 255);
+}
+
+#page3 {
+    background: linear-gradient(180deg, #ffffff, #002a6a);
+}
+
+#fixed-div {
+  position: fixed;
+  top: calc(50vh - 25vh);
+  left: calc(50vw - 25vh);
+  width: 50vh;
+  height: 50vh;
+  opacity: 40%;
+  background-color: #002a6a;
+}
+
+.bigimg {
+    width: 700px;
+    margin-left: auto;
+    margin-top: calc(50vw - 350px);
+    margin-left: calc(50vw - 350px);
+    position: relative;
+}
+
+.fishimg {
+    width: 400px;
+    margin-left: auto;
+    margin-top: calc(50vw - 200px);
+    margin-bottom: calc(50vw - 200px);
+    margin-left: calc(50vw - 200px);
+    position: relative;
+}
+
+.smallimg {
+    width: 400;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.squidimg {
+    background-image: "squid.png";
+    width: 400;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.squidimg:hover{
+    background-image: "squidHover.png";
+    width: 400;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: #002a6a;
+}
+
+a:hover{
+    text-decoration: underline;
+}
