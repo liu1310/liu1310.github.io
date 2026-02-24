@@ -57,6 +57,12 @@ body {
     position: relative;
 }
 
+.iconimg {
+    width: 25px;
+    margin-top: 300px;
+    position: relative;
+}
+
 .squidimg {
     background-image: "squid.png";
     width: 400;
