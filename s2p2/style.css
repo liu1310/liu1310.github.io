@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+html, body {
+    background-color: rgb(255, 255, 255);
+    color: rgb(50, 40, 35);
+     font-family: "Inconsolata", monospace;
+     font-weight: 100;
+     margin: 0;
+}
+.animation{
+  transition: 1s;
+} 
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with fully transparent text */
+    }
+    to {
+        opacity: 1; /* End with fully opaque text */
+    }
+}
+
+/* Apply the animation to the text element */
+#fade-in-text {
+    animation: fadeIn 3s forwards;
+    font-size: 20px;
+    font-weight: 300;
+    color: #2373FF;
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 7%;
+}
+
+
+#court_container{
+    position: relative;
+    width: 1000px;
+    margin: auto;
+    overflow: auto;
+}
+
+p {
+    color: #2373FF;
+}
+
+.centered {
+  text-align: center;
+  margin-bottom: auto;
+  font-family: "Inconsolata", monospace;
+  font-weight: 100;
+  color: #002a6a;
+}
+
+#page1 {
+    background-color: rgb(255, 255, 255);
+}
+
+#page3 {
+    background: linear-gradient(180deg, #ffffff, #002a6a);
+}
+
+#bigimg {
+    width: 100%;
+    margin-left: auto;
+    margin-top: calc(50vw - 450px);
+    position: relative;
+    margin-bottom: 500px;
+    margin-top: 100px;
+    position: relative;
+    display: inline-block;
+
+    transition: all 0.3s ease;
+}
+
+#bigimg img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.zone{
+    position:absolute;
+    width:50%;
+    height:50%;
+    cursor:pointer;
+}
+
+
+#smallimg {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 20px;
+    top: 10%;
+    position: absolute;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+/*.titlepic {
+   position: absolute;
+    top: 80px;
+    left: 280px;
+
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    background-color: #f6f6f6;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+}
+
+.titlepic img {
+    width: 100%;
+    height: 100%;  
+    display: block;
+    object-fit: cover;
+}
+    */
+
+.titlepic {
+   position: absolute;
+    top: 80px;
+    left: 280px;
+
+    width: 500px;
+    height: 700px;
+    padding: 20px;
+
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    background-image: url("about.png");
+    background-repeat:no-repeat; 
+    background-size: cover;
+    background-color: #f6f6f6;
+    outline: none;
+
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+}
+
+.box {
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    left: 500px;
+    top: 20px;
+    background-color: #002a6a;
+    opacity: 0.1;
+    display: inline-block;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+.box2 {
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    left: 750px;
+    top: 785px;
+    background-color: #002a6a;
+    opacity: 0.1;
+    display: inline-block;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+.box3 {
+    position: absolute;
+    width: 70px;
+    height: 50px;
+    left: 650px;
+    top: 405px;
+    background-color: #002a6a;
+    opacity: 0.1;
+    display: inline-block;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+.serve_example {
+    position: absolute;
+    top: 40%;
+    left: 7%;
+
+    width: 250px;
+    height: 20px;
+    padding: 20px;
+
+    background-color: rgb(229, 229, 229);
+    opacity: 1;
+}
+
+.serve_gif {
+  background-image: url("serve.gif");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  top: 100px;
+  height: 200px; 
+  width: 100%;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+
+
+.serve_info {
+    position: absolute;
+    top: 80px;
+    left: 280px;
+
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+
+    background-color: rgb(229, 229, 229);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+}
+
+.return_example {
+    position: absolute;
+    top: 40%;
+    left: 7%;
+
+    width: 250px;
+    height: 20px;
+    padding: 20px;
+
+    background-color: rgb(229, 229, 229);
+    opacity: 1;
+}
+
+.return_gif {
+    background-image: url("return.gif");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    top: 100px;
+    height: 200px; 
+    width: 100%;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+
+.return_info {
+    position: absolute;
+    top: 850px;
+    left: 450px;
+
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+
+    background-color: rgb(229, 229, 229);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+}
+
+.volley_gif {
+    background-image: url("volley.gif");
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    top: 100px;
+    height: 200px; 
+    width: 100%;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+
+.volley_info {
+    position: absolute;
+    top: 465px;
+    left: 360px;
+
+    width: 300px;
+    height: 500px;
+    padding: 20px;
+
+    background-color: rgb(229, 229, 229);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+}
+
+.volley_example {
+    position: absolute;
+    top: 40%;
+    left: 7%;
+
+    width: 250px;
+    height: 20px;
+    padding: 20px;
+
+    background-color: rgb(229, 229, 229);
+    opacity: 1;
+}
+
+#toggleBox:checked ~ #court_container #bigimg {
+    transform-origin: 500px 20px;
+    transform: scale(2.5);
+    transition: all 0.3s ease;
+} 
+
+.box:hover {
+   opacity: 0.7;
+  visibility: visible; 
+  transition: all 1s ease;
+}
+
+#about:checked ~ #court_container .titlepic {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#toggleBox:checked ~  #court_container .serve_info {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#toggleBox:checked ~  #court_container #fade-in-text {
+    display: none;
+}
+
+#toggleBox:checked ~  #court_container #smallimg {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.serve_example:hover .serve_gif {
+  opacity: 1;
+  visibility: visible;
+}
+
+.box2:hover {
+   opacity: 0.7;
+  visibility: visible; 
+  transition: all 1s ease;
+}
+
+#toggleBox2:checked ~  #court_container #fade-in-text {
+    display: none;
+}
+
+#toggleBox2:checked ~  #court_container #smallimg {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#toggleBox2:checked ~ #court_container #bigimg {
+    transform-origin: 740px 785px;
+    transform: scale(2.5);
+}
+
+#toggleBox2:checked ~  #court_container .return_info {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.return_example:hover .return_gif {
+    opacity: 1;
+  visibility: visible;
+}
+
+.box3:hover {
+   opacity: 0.7;
+  visibility: visible; 
+  transition: all 1s ease;
+}
+
+#toggleBox3:checked ~  #court_container #fade-in-text {
+    display: none;
+}
+
+#toggleBox3:checked ~  #court_container #smallimg {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#toggleBox3:checked ~ #court_container #bigimg {
+    transform-origin: 580px 405px;
+    transform: scale(2.5);
+}
+
+#toggleBox3:checked ~  #court_container .volley_info {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.volley_example:hover .volley_gif{
+     opacity: 1;
+  visibility: visible;
+}
+
+@media only screen and (max-width: 1000px) {
+  #bigimg {
+    margin-left: 0vw;
+    margin-top: 0vw;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  @media (max-width: 500px) {
+    .titlepic {
+        width: 90vw;
+        height: auto; 
+    }
+}
+}
