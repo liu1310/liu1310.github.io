@@ -3,25 +3,463 @@
     <link rel="stylesheet" href= "style.css">
 </head>
 <body>
-    <!--
-    <nav class="navbar">
-  <ul>
-    <li><a href="#">Still Life</a></li>
-    <li><a href="#">Iteractive Game</a></li>
-    <li><a href="#">Webring</a></li>
-    <li><a href="#">Clock</a></li>
-    <li><a href="#">Performance</a></li>
-    <li><a href="#">API</a></li>
-  </ul>
-</nav>
--->
-
+  
 <div class="title">you are here</div>
 
+<input type="checkbox" id="toggle" hidden>
+<input type="checkbox" id="toggle2" hidden>
+
+<input type="checkbox" id="reading1" hidden>
+<input type="checkbox" id="reading2" hidden>
+<input type="checkbox" id="reading3" hidden>
+<input type="checkbox" id="reading4" hidden>
+<input type="checkbox" id="reading5" hidden>
+<input type="checkbox" id="reading6" hidden>
+<input type="checkbox" id="reading7" hidden>
+<input type="checkbox" id="reading8" hidden>
+<input type="checkbox" id="reading9" hidden>
+<input type="checkbox" id="reading10" hidden>
+
+<input type="checkbox" id="webringToggle" hidden>
+
 <div class="container">
-  <div class="circle"></div>
+    <label for="toggle" class="circle"></label>
 </div>
 
+<div class="hint" id="hint">psst...click the circle..</div>
+
+<script id="lerp01">
+const circle = document.querySelector(".circle");
+
+let currentX = window.innerWidth / 2;
+let currentY = window.innerHeight / 2;
+
+let targetX = currentX;
+let targetY = currentY;
+
+const speed = 0.2; 
+
+document.addEventListener("mousemove", (e) => {
+  targetX = e.clientX;
+  targetY = e.clientY;
+});
+
+function animate() {
+  currentX += (targetX - currentX) * speed;
+  currentY += (targetY - currentY) * speed;
+
+  circle.style.left = currentX + "px";
+  circle.style.top = currentY + "px";
+
+  requestAnimationFrame(animate);
+}
+
+
+
+circle.style.transform = "translate(-50%, -50%)";
+
+const hint = document.getElementById("hint");
+const toggle = document.getElementById("toggle");
+
+let hasClicked = false;
+
+toggle.addEventListener("change", () => {
+  hasClicked = true;
+  hint.classList.remove("show");
+});
+
+// show hint after 7 seconds
+setTimeout(() => {
+  if (!hasClicked) {
+    hint.classList.add("show");
+  }
+}, 5000);
+
+function animate() {
+  currentX += (targetX - currentX) * speed;
+  currentY += (targetY - currentY) * speed;
+
+  circle.style.left = currentX + "px";
+  circle.style.top = currentY + "px";
+
+  hint.style.left = currentX + "px";
+  hint.style.top = (currentY + 40) + "px";
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+</script>
+
+<div class="drawingsContainer">
+<a href="https://codepen.io/Olivia-Liu-the-scripter/pen/YPWepxa" target="_blank" class="s1p2Pic"></a>
+<a href="https://liu1310.github.io/s1fp/s1fp/index.html" target="_blank" class="s1fpPic"></a>
+ <label for="webringToggle" class="s2p1Pic"></label>
+<a href="https://liu1310.github.io/s2p2/index.html" target="_blank" class="s2p2Pic"></a>
+<a href="https://editor.p5js.org/liu1310/sketches/qn_etd2JQ" target="_blank" class="s2fpPic"></a>
+<a href="https://jasmine-wng.github.io/s3q1/index.html" target="_blank" class="s3p1Pic"></a>
+<a href = https://liu1310.github.io/site/index.html target="_blank" class="s3p2Pic"></a>
+<a href = https://editor.p5js.org/liu1310/sketches/1WsGAceOR target="_blank" class="s3fpPic"></a>
+
+<div class="s1p2Description"><p>still life using css & html </p> 
+    <p> - html layout, nesting, and css styling</p></div>
+<div class="s1fpDescription"><p>interactive fish game!</p>
+    <p> - navigation, grids, messaging</p>
+</div>
+<div class="s2p1Description"><p>class webring</p>
+    <p> - hierarchy of information, modular code</p>
+</div>
+<div class="s2p2Description"><p>one page interactive intro to tennis</p>
+    <p> - hover effects, CSS selectors, alt text, viewport sizing</p>
+</div>
+<div class="s2fpDescription"><p>p5.js clock!</p>
+    <p> - javascript, looping functions</p>
+</div>
+<div class="s3p1Description"><p>performance script</p>
+    <p> - scripted functions & chance</p>
+</div>
+<div class="s3p2Description"><p>vacation photos api</p>
+    <p> - linking ifttt, figma, marketing</p>
+</div>
+<div class="s3fpDescription"><p>generative design</p>
+    <p> - conditional loops, randomness, user interactivity</p>
+</div>
+</div>
+
+<div id="aow-webring">
+  <div class="aow-panel">
+
+    <div class="aow-header">
+      <span class="aow-title">Art of the Web</span>
+
+      <label for="webringToggle" class="aow-close">✕</label>
+    </div>
+
+    <hr class="aow-divider">
+
+    <ul class="aow-sites" id="aow-sites"></ul>
+
+    <hr class="aow-divider">
+
+    <div class="aow-nav" id="aow-nav"></div>
+
+  </div>
+</div>
+
+
+<div class="readingsContainer">
+  <label for="reading1" class="cell1">1</label>
+  <label for="reading2" class="cell2">2</label>
+  <label for="reading3" class="cell3">3</label>
+  <label for="reading4" class="cell4">4</label>
+  <label for="reading5" class="cell5">5</label>
+  <label for="reading6" class="cell6">6</label>
+  <label for="reading7" class="cell7">7</label>
+  <label for="reading8" class="cell8">8</label>
+  <label for="reading9" class="cell9">9</label>
+  <label for="reading10" class="cell10">10</label>
+</div>
+
+<div class="reading1">
+
+    <label for="reading1" class="closeBtn">&times;</label>
+
+    <h2>Reading One: Laurel Schwulst</h2>
+
+    <p>A major takeaway I got from Schwulst's essay was that websites are meant to be animate, temporary, whimsical, and malleable.  
+      By utilizing a plethora of metaphors comparing the life and behavior of websites to nature (ex. gardens, plant, puddles, flock of birds), Shwulst is able to reject the common notion that websites are staid, uninteresting, and simply a catalog of information. 
+      In the context of art and design, Shwulst argues that websites contribute to an artist's practice by giving them agency for world building, exploring language, structure, and style rather than a stagnant archive for past works. Shwulst doesn't give us a definite definition of what a website is, rather, she gives the readers hints on what a website could be: "an individual act of collective ambition".</p>
+
+
+      <p>I am extremely curious as to how she arrived to several of the metaphors she wrote out especially the metaphor with a rock falling into the ocean (what is the benefit of creating so many short lived websites?) and the one with a shelf. Another question I have is what exactly does she mean by "evaporating" websites; does this mean letting go of routine maintenance? Moving on to a different form of expression?</p>
+
+</div>
+
+<div class="reading2">
+
+    <label for="reading2" class="closeBtn">&times;</label>
+
+    <h2>Reading Two: Olia Lialina</h2>
+
+    <p>After reading Olia Lialina's essay on the fall of Geocities, my question about dying/evaporating websites from last week's discussion has been clarified. Now, I have come to understand that websites "die" after aging for a period of time without proper maintenance, support, or motivation, yet their remains are still very much a reflection of the lives their creators and the old web. 
+      I believe that the method in which many of these websites from Geocities break down - through 404 errors, goodbye messages. missing images, and broken hyperlinks - still preserves their energy and whimsy, giving archivists a better look into how creators thought in the epoch of the Internet. 
+      On the surface, these websites have "died" since they no longer are being maintained to perform specific functions, but deeper down, the brokenness of these sites retain personality and history while also causing waves of action amongst other site-building engines such as Tripod. 
+      Websites don't simply cease to exist, rather, they evaporate over time. Certain websites like Marshasgraphics are technically "dead" as they haven't been updated in over a decade, yet we can still traverse the fragments and piece together a story. Similarly, I think the bordered backgrounds are also a fragment that tells a story of early Internet optimism, creative whimsy, and personal expression through a new medium. 
+      Hence, I feel that websites don't crash and burn when they die; rather, they slip away, leaving behind footprints that we can still trace.</p>
+
+
+      <p>I have a remaining question: will contemporary websites evaporate in a similar way to that of Geocities? In an era of tightened cybersecurity and advanced networks, it may be more difficult to find "ruins" of these websites. I wonder how the faster "deaths" of modern websites impacts the art of archiving.</p>
+
+</div>
+
+<div class="reading3">
+
+    <label for="reading3" class="closeBtn">&times;</label>
+
+    <h2>Reading Three: Marisa Olson</h2>
+
+    <p>I am really fascinated by the definition of postinternet as something not as an era of "after" but a state of being in the 21st century that we are all living in, whether or not we are producing art. 
+      Unlike other post-era artistic movements in art history, postinternet works rarely have a thread or common characteristics we can use to identify and categorize them with. The essay states that "any type of art that is in some way influenced by the internet and digital media" qualifies as postinternet era art, meaning anything from clay sculptures referencing virtual models to online mangas count as postinternet. 
+      Thus, postinternet is a much more unconventional era of art as the sheer scope and possibilities of the internet makes it extremely difficult to squeeze postinternet art into one specific category. I think the unconventional format of the postinternet era gives modern artists much more agency to express their styles as creators; crocheting a sweater using patterns found from a Facebook post online counts as postinternet, and so does using Adobe Photoshop for photo editing. 
+      A singular postinternet artist can create more than just art using skills and ideas from the internet, and those works too can be considered postinternet in a sense. Comparing the universality of postinternet to a "universal acid" emphasizes not just the scale of postinternet but also its pervasiveness - how it sneaks into other fields and influences the relationships between creators. The essay also points how the "World Wide Web is, now more than ever, mirroring globalization". 
+      Thus, postinternet is not defined by medium but rather by collaboration and awareness between users and the internet.</p>
+
+
+      <p>Questions:</p>
+
+<p>1. Can art be made in the 21st century that is completely uninfluenced by the internet?</p> 
+
+<p>2. Could art and design created from AI tools also be considered as postinternet art? To what degree can humans use the internet as a tool instead of a cocreator?</p>
+</div>
+
+<div class="reading4">
+
+    <label for="reading4" class="closeBtn">&times;</label>
+
+    <h2>Reading Four: Bojana Coklyat & Shannon Finnegan</h2>
+
+    <p>I really like Coklyat and Finnegan's description of using alt text as a translator for image/visual information to readable text. Despite the preconception that images offer more creativity than text (i.e. the famous saying "a picture is worth a thousand words"), Coklyat and Finnegan argue that alt text actually has the potential to offer more creative liberty and interpretation than just a singular picture. 
+      For example, they explain how no two people will describe a scene exactly the same, and converting visual information to text forces these "translators" to choose which details to omit and which details to embolden. Split decisions on whether to splice a detail or not may translate into more literal descriptions of the image while more deliberate choices could convey intention, but both contribute to a unique interpretation of the image at hand. 
+      Similar to a group of artists all painting from the same reference, the major concepts are still present in these alt texts, yet the new text now has a certain flare that varies from artist to artist and reader to reader. Connotation, diction, and cadence are just as important for painting pictures as hue, saturation, and brightness, and even a slight variation in language or pace could add to the visual narrative. Hence, written descriptions can offer more than enough creative liberty and expression.</p>
+
+      <p>Questions:</p>
+
+<p>1. What if someone decides to use alt text to describe something completely different or add an unrelated comment? Does this support creativity at the expense of accessibility?</p>
+
+<p>2. How would alt text look across languages and would it convey more information using different words in different languages?  </p>
+</div>
+
+<div class="reading5">
+
+    <label for="reading5" class="closeBtn">&times;</label>
+
+    <h2>Reading Five: Ramsey Nasser</h2>
+
+    <p>The biggest takeaway I got from Ramsey Nasser's essay in Decolonizing the Digital is that the digital world - let it be programming, design, etc. - is heavily reliant on communication and dialogue. Nasser argues that naming things is one of the most important activities in programming, allowing for information and context to be communicated between the human and computer as well as between human to human. 
+      The absence of verbal communication in digital spaces demands written communication  to relay important information instead, but a lack of common language between countries, especially developing countries where use of the digital world is imperative for higher education, prevents equity in digital spaces. As someone who has experience with both programming and design, this flipped my perspective on digital work as it made me realize that I took my proficiency in English for granted when it comes to working in online spaces. 
+      I believe that Nasser's goal was to advocate for the inequality when it comes to facilitating communication in programming, and though there isn't a robust solution so far, raising awareness allows English speaking programmers like myself to investigate the gaps in language and methods to make programming more accessible and friendly to children from other countries.</p>
+
+    <p>Questions:</p>
+
+    <p>1. How would programming and design look if English was not the primary language used? How would this impact the role of the United States and other English-majority countries in developing the digital world?</p>
+    <p>2. Despite the mass globalization of trends, companies, products in the 21st century, why has programming remained biased towards the English language?</p>
+</div>
+
+<div class="reading6">
+
+    <label for="reading6" class="closeBtn">&times;</label>
+
+    <h2>Reading Six: Silvio Lorusso</h2>
+
+    <p>My main takeaway from this reading was that designers are simultaneously both advantaged and disadvantaged in their positions both intellectually and technically. For example,  Lorusso calls designers "victims of the deskilling caused by digital democratisation" in reference to the gradual popularization of design skills amongst amateurs and even non-designers due to the widespread digital tools available, meaning that even those with no knowledge of design principles can create designs - this condenses designers' work as "clerical" work, which creates disillusionment amongst professional and aspiring designers. 
+      This disillusionment, in addition to a creeping fear of being replaced by digital tools, pushes designers to learn coding to get an edge in the workplace with the additional skillset. However, while designers are privileged by their creative thinking, "people with a PhD in mathematics and data science" are now given more roles in directing advertising, causing panic and concern amongst designers that sometimes lead to elitism and pride over more amateur designers and design choices (ex. Comic sans). This puts the status of a designer as a professional figure into jeopardy with other fields and within the design field as well, and it's no question that many designers experience burnout and frustration at the seemingly obsoleteness of their skills. While visual narratives and expressions are imperative in the professional world, it's common for designers to feel disillusioned with the reality of their work status compared to the promising expectations they hold in the beginning.</p>
+
+    <p>Questions:</p>
+
+    <p>1. Could a programmer be called a designer if they knew exactly how to weave a visual narrative using AI and other digital tools despite having limited knowledge in art and design principles?</p>
+    <p>2. How do designers combat their disillusionment, especially in tense corporate worlds where demands are high and often unaccommodating to human burnout?</p>
+</div>
+
+<div class="reading7">
+
+    <label for="reading7" class="closeBtn">&times;</label>
+
+    <h2>Reading Seven: Dot Tuer</h2>
+
+    <p>Tuer's article on Vera Frenkel's work, String Games, emphasizes the importance of space, position, and presence in both artistic expressions and narrative building. Tuer explains how through her work such as String Games, "Frenkel realized a space in between conceptual and technological affirmations of presence" and utilized that space to buttress the meaning of her work in both a literal and historical context. 
+      For example, the fact that String Games monitored over two cities, Montreal and Toronto, served the work's context and purpose by showing the complex exchanges between the players, but it also contributed to the historical context of the role of technology in the 1970s. Improvised narratives were built from the web of interactions, movements, and presence of the players, which showed to the world how integral technology is, not only to making art, but for fostering communication and connection between humans as a whole. 
+      In addition, the lack of presence or position also builds narratives; in Frenkel's Body Missing, Tuer explains that the work serves to emphasize empty space to communicate a sense of loss and tragedy in the context of World War II. Even in String Games, when the work was published on DVD, it could be televised through a screen who "[erased] the participants' presence at the same time as their gestures were being recorded". The removal of the participants' physical presence combined with the record of their movements alludes to a digital world in which tangible bodies are replaced by gestures, speech, and motifs.</p>
+
+    <p>Questions:</p>
+
+    <p>1. How can space, positioning, presence be utilized to communicate narratives in 2D work compared to in 3D work? Do screens automatically make a work 2D?</p>
+    <p>2. What differences can we note by removing vs adding elements? What is the benefit or drawbacks of either removing or adding presence to a work?</p>
+</div>
+
+<div class="reading8">
+
+    <label for="reading8" class="closeBtn">&times;</label>
+
+    <h2>Reading Eight: Paul Soulellis</h2>
+
+    <p>The main idea I got from Paul Soulellis's "Performing the Feed" is that when the art of posting becomes a performance, it can border on being automated or intermittent when that performance turns into an endless feed. With the presence of a digital world through the Internet, posting becomes more accessible and open to different types of media. 
+      Postings are no longer limited to sheets of paper that must use ink to convey its message; now, they could range from anything such as a gaming show to videos of nature to uploaded kitchen recipes. A forever stream of postings, however, could easily destroy the originality of these postings when posts become grouped together, only accessible by keywords, or mundane for the sole purpose of garnering clicks. 
+      Soulellis labels this as the "new paradigm" in which a growing database is sorted by "algorithmic curation", meaning that these posts are gaining less diverse views as the same demographic of people are viewing them each time. This also plays into the transformation of a post into a performance; now, the performance has a more solid conception of a target audience to perform for with the additional goal of gaining interactions. 
+      Soulellis uses this to advise us to steer away from the mundane feed and instead subvert our own perspectives to look for "leaks" in the seemingly smooth flow of information to add back that human originality to our posts and performances.</p>
+
+    <p>Questions:</p>
+
+    <p>1. How does the concept of "doomscrolling" play into the idea of the new paradigm and how do we counter its overwhelming presence?</p>
+    <p>2. Is the concept of a "forever feed" only made possible by the Internet? Would we still have the new paradigm with a less capable Internet?</p>
+</div>
+
+<div class="reading9">
+
+    <label for="reading9" class="closeBtn">&times;</label>
+
+    <h2>Reading Nine: Henry Desroches</h2>
+
+    <p>My main takeaway from Desroches' article. "A website to destroy all websites" is that the issue with the modern Internet comes down to a matter of ownership; our Internet-driven consumerism makes us consumers of content but also the ultimate product of the select companies that own every aspect of our interaction with the Internet. For example, when we scroll and like TikTok videos, we may feel like we are doing the consuming - hearting, commentating, and watching these short content bites - but ultimately our attention spans and engagement is the true content being consumed. Desroches compares the development of the Internet and its ownership of us users to that of the automobile, explaining "No longer a tool to serve our societies, our societies now serve the automobile." The Internet was once a tool to be explored, but its "deadening industrialization" has transformed it into a requisite for society. Our social relationships, knowledge, financial decisions, and education all rely so much on the Internet that we have essentially become "owned" by the Internet and its major leaders.
+
+Desroches argues that to fight against this "bad" Internet, we must reclaim ownership within the Internet and its platforms. He proposes the creation of personal websites to establish ownership, creativity, and self-expression in the midst of a rapid stream of monotonous consumerism. By creating something that purely and unapologetically represents our uniqueness as humans, we can steal that ownership back from the gaping jaws of the Internet and revert its status to what it was before: a helpful tool.</p>
+
+    <p>Questions:</p>
+
+    <p>1. How can we classify social media posts in terms of ownership? We can create our own profiles and content, but is this an example of us establishing our ownership and presence on the Internet, or does the role of a curated algorithm pull us back to being consumed?</p>
+    <p>2. How do we combat million-dollar companies such as YouTube, TikTok, etc. with personal websites that self-express? Should we be using personal websites to combat these companies to begin with, or is it more of a personal/grassroots effort to reclaim ownership? </p>
+</div>
+
+<div class="reading10">
+
+    <label for="reading10" class="closeBtn">&times;</label>
+
+    <h2>Reading Ten: Boris Groys</h2>
+
+    <p>A really interesting concept I took away from Groys's "Art on the Internet" is how the Internet objectifies not only its contents but its users as well. Groys quotes Paul Sartre by saying the gaze of others "objectifies" us, and with the Internet providing a universal gaze over all of our operations and creations, we are constantly being objectified by others and even ourselves. We become reduced to circular icons that mimic faces and quick profiles that barely skim the surface of who we are as humans. Our work has been flattened into .png files and bites on a screen. This objectification and limitation of our presence to virtual spaces blurs the lines between reality and fiction, and as Groys says, once everything from art to politics to work operates on the Internet, everything becomes "real". 
+
+Groys emphasizes the importance of framing when it comes to performance and displaying art: how the presence of a frame in a museum marks works as fictional. However, when our devices provide a physical frame for everything on the Internet that we use, we can hardly tell what counts as fictional or not. Everything becomes a sort of performance - or rather, documentation. Groys explains that "framing becomes deinstitutionalized, and the framed fictionality becomes de-fictionalized." In the context of art, art on the Internet end up being perceived as entirely different works than art in museums as viewers no longer see the art as a performance, but rather . I believe that this mass objectification and simplification of users and content, alongside the deinstitutionalization of framing, supports the idea of the Internet stripping genuine work and connections that can only be appreciated through in person encounters and events.  </p>
+
+    <p>Questions:</p>
+
+    <p>1. How does the Internet being finite yet universal influence how artists and writers think about the intended audience of their work? What are the differences between work targeting certain niche audiences or appealing to a broader pool of viewers?</p>
+    <p>2. What is the primary difference between performance and documentation, and could there be some performances that are enhanced by the Internet or documentations that are buttressed by in person practices?</p>
+</div>
+
+
+<div class="container2">
+    <label for="toggle2" class="circle2"></label>
+</div>
+
+<div class="bioContainer">
+    <div class="mePic"></div>
+     <div class="textBlock">
+        <div class="aboutMe">hi, i'm olivia!</div>
+        <div class="aboutMeInfo"> <p>welcome to my dsgn 1020 portfolio!</p> <p>i am a freshman design major at penn. i'm from cleveland, oh.
+            my skills include adobe suite, procreate, java, c++, and html & css.</p>
+            <p>when i'm not designing, i enjoy watching tennis, baking, and illustrating!</p>
+             </div>
+    </div>
+</div>
+
+<script>
+
+// below is code from our aow class webring
+
+ (function() {
+        const SITES = [
+          { name: "Priya", url: "https://pbhavi22.github.io/" },
+          { name: "Ben", url: "https://benjijiang.github.io/index.html" },
+          { name: "Samir", url: "https://smr-ptk.github.io/art-of-the-web-section1/index.html" },
+          { name: "Olivia", url: "https://liu1310.github.io/s1fp/index.html" },
+          { name: "Joanna", url: "https://joannarr12.github.io/photography_portfolio/index.html" },
+          { name: "Jasmine", url: "https://jasmine-wng.github.io/s1fp/" }
+        ];
+
+       const container = document.getElementById("aow-webring");
+          if (!container) {
+            console.log("webring not found");
+            return;
+          }
+
+        const panel = document.getElementById("aow-panel");
+        const closeBtn = container.querySelector(".aow-close");
+        const sitesList = document.getElementById("aow-sites");
+        const navEl = document.getElementById("aow-nav");
+
+        const currentHost = window.location.hostname;
+        let currentIndex = -1;
+        SITES.forEach((site, i) => {
+          try {
+            if (new URL(site.url).hostname === currentHost) currentIndex = i;
+          } catch (_) {}
+        });
+
+        SITES.forEach((site, i) => {
+          const li = document.createElement("li");
+          if (i === currentIndex) {
+            li.innerHTML = "● " + site.name;
+            li.classList.add("aow-current");
+        } else {
+          const a = document.createElement("a");
+          a.href = site.url;
+          a.target = "_blank";
+          a.rel = "noopener";
+          a.innerHTML = '<span class="aow-arrow">→ </span>' + site.name;
+          li.appendChild(a);
+        }
+          sitesList.appendChild(li);
+        });
+
+        function goTo(index) {
+          window.location.href = SITES[index].url;
+        }
+
+        function getPrevIndex() {
+          return (currentIndex - 1 + SITES.length) % SITES.length;
+        }
+
+        function getNextIndex() {
+          return (currentIndex + 1) % SITES.length;
+        }
+
+        function getRandomIndex() {
+          let idx;
+          do {
+            idx = Math.floor(Math.random() * SITES.length);
+          } while (idx === currentIndex && SITES.length > 1);
+          return idx;
+        }
+
+        navEl.innerHTML =
+          '<a href="' + SITES[getPrevIndex()].url + '" id="aow-prev">← Prev</a>' +
+          '<span class="aow-sep">·</span>' +
+          '<a href="#" id="aow-random">Random</a>' +
+          '<span class="aow-sep">·</span>' +
+          '<a href="' + SITES[getNextIndex()].url + '" id="aow-next">Next →</a>';
+
+        document.getElementById("aow-prev").addEventListener("click", function(e) {
+          e.preventDefault();
+          goTo(getPrevIndex());
+        });
+        document.getElementById("aow-next").addEventListener("click", function(e) {
+          e.preventDefault();
+          goTo(getNextIndex());
+        });
+        document.getElementById("aow-random").addEventListener("click", function(e) {
+          e.preventDefault();
+          goTo(getRandomIndex());
+        });
+
+        function close() {
+          panel.classList.remove("aow-open");
+        }
+
+        function toggle() {
+          panel.classList.toggle("aow-open");
+        }
+        const s2p1Pic = document.querySelector(".s2p1Pic");
+
+        s2p1Pic.addEventListener("click", function() {
+          panel.classList.add("aow-open");
+        });
+        
+        closeBtn.addEventListener("click", close);
+
+        document.addEventListener("click", function(e) {
+          if (panel.classList.contains("aow-open") && !container.contains(e.target)) {
+            close();
+          }
+        });
+
+        document.addEventListener("keydown", function(e) {
+          if (e.key === "Escape" && panel.classList.contains("aow-open")) {
+            close();
+          }
+        });
+      })();
+
+</script>
 
 
 </body>
